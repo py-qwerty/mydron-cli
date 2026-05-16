@@ -71,6 +71,7 @@ D:\MyDron\logs\
 D:\MyDron\reports\
 D:\MyDron\plans\
 D:\MyDron\exports\
+D:\MyDron\references\speedybee-f405-v4\
 D:\MyDron\mydron-cli\docs\INAV_CLI_COMMANDS.md
 ```
 

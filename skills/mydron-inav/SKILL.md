@@ -25,6 +25,7 @@ D:\MyDron\logs      raw command outputs and session logs
 D:\MyDron\reports   human-readable diagnostic summaries
 D:\MyDron\plans     proposed command plans before execution
 D:\MyDron\exports   parsed settings, JSON/CSV exports, derived data
+D:\MyDron\references official board/manual reference files
 ```
 
 Known current target:
@@ -84,6 +85,8 @@ Load only the reference needed for the task:
 - `references/workflows.md`: procedures for port detection, backup, receiver, GPS, failsafe, motor diagnostics.
 - `references/safety.md`: hard safety rules and confirmation requirements.
 - `references/system-facts.md`: facts observed from this specific drone and backup files.
+
+Before wiring/configuration work, consult the downloaded official SpeedyBee manuals at `D:\MyDron\references\speedybee-f405-v4`.
 
 ## Common Commands
 
