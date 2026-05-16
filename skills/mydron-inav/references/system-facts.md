@@ -73,6 +73,7 @@ D:\MyDron\plans\
 D:\MyDron\exports\
 D:\MyDron\references\speedybee-f405-v4\
 D:\MyDron\mydron-cli\docs\INAV_CLI_COMMANDS.md
+D:\MyDron\mydron-cli\skills\mydron-inav\references\boards\speedybee-f405-v4.md
 ```
 
 Older exploratory files may exist under `D:\MyDron\mydron-cli\backups`, but new operational artifacts should be written to the root-level folders under `D:\MyDron`.
