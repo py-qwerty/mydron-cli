@@ -13,6 +13,28 @@ mydron cli --port COM5 --allow-unsafe "<risky INAV CLI command>"
 
 Do not run multiple commands against `COM5` in parallel. Windows allows only one process to hold the port.
 
+## Terminal formatting
+
+Use ASCII-only layouts for graphical representations:
+
+```text
++---------+--------+----------+
+| Sensor  | State  | Notes    |
++---------+--------+----------+
+| GYRO    | OK     | ICM42605 |
+| ACC     | OK     | ICM42605 |
++---------+--------+----------+
+```
+
+Use terminal color for interactive diagnostics when useful:
+
+- green: OK/safe/connected
+- yellow: warning/needs attention
+- red: blocked/error/dangerous
+- cyan/blue: headings and selected port
+
+Do not include ANSI escape codes in files under `D:\MyDron\backups`, `reports`, `plans`, or `exports` unless the user explicitly asks for colored logs.
+
 ## Safe INAV CLI commands allowed by default
 
 These are read-only or diagnostic:

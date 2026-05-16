@@ -9,6 +9,10 @@ description: Operate, diagnose, back up, and safely configure Pablo's MyDron INA
 
 Treat the flight controller as a live system. Prefer read-only commands first, take a backup before changes, and never run motor/servo/output commands unless the user explicitly asks for that diagnostic and confirms safety conditions.
 
+For graphical explanations in text, always use plain ASCII diagrams, tables, pin maps, and flowcharts. Avoid Unicode box drawing so the output stays portable across terminals, logs, GitHub, and PowerShell.
+
+Use terminal colors when they improve scanning of diagnostics or command output. Prefer ANSI colors through the CLI/code for statuses such as OK/warn/error, safe/risky commands, and sensor states. Provide a no-color path or avoid color when writing logs/reports to files.
+
 Use `D:\MyDron` as the operational root. Store generated backups, logs, plans, reports, and exports under this root, not inside the skill folder.
 
 Use the code project at `D:\MyDron\mydron-cli`. The command is available as `mydron` after `D:\MyDron\mydron-cli\bin` is on PATH; otherwise call `D:\MyDron\mydron-cli\bin\mydron.cmd`.
