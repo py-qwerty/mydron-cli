@@ -4,6 +4,7 @@ import argparse
 from pathlib import Path
 import sys
 
+from .health import DEFAULT_BOARD, run_quick_health
 from .inav import InavClient
 from .safety import cli_command_root, is_safe_cli_command
 from .serial_port import list_serial_ports
@@ -25,6 +26,29 @@ def build_parser() -> argparse.ArgumentParser:
     status = subparsers.add_parser("status", help="Lee estado basico MSP.")
     status.add_argument("--port", required=True, help="Puerto serie, por ejemplo COM5.")
     status.add_argument("--baud", type=int, default=115200, help="Baudrate serie.")
+
+    quick_health = subparsers.add_parser(
+        "quick-health",
+        help="Ejecuta un health check rapido especifico de una placa.",
+    )
+    quick_health.add_argument("--port", required=True, help="Puerto serie, por ejemplo COM5.")
+    quick_health.add_argument("--baud", type=int, default=115200, help="Baudrate serie.")
+    quick_health.add_argument(
+        "--board",
+        default=DEFAULT_BOARD,
+        help=f"Perfil de placa. Por defecto: {DEFAULT_BOARD}.",
+    )
+    quick_health.add_argument(
+        "--out-dir",
+        type=Path,
+        default=None,
+        help="Carpeta donde guardar el informe. Por defecto usa la carpeta de la placa.",
+    )
+    quick_health.add_argument(
+        "--no-color",
+        action="store_true",
+        help="Desactiva colores ANSI en la salida de terminal.",
+    )
 
     dump = subparsers.add_parser("dump-cli", help="Guarda un dump CLI de INAV.")
     dump.add_argument("--port", required=True, help="Puerto serie, por ejemplo COM5.")
@@ -104,6 +128,22 @@ def main(argv: list[str] | None = None) -> int:
 
         for key, value in status.items():
             print(f"{key}: {value}")
+        return 0
+
+    if args.command == "quick-health":
+        try:
+            output, _report_path = run_quick_health(
+                port=args.port,
+                baud=args.baud,
+                board=args.board,
+                out_dir=args.out_dir,
+                color=not args.no_color,
+            )
+        except Exception as exc:
+            print(f"Error ejecutando quick-health: {exc}", file=sys.stderr)
+            return 1
+
+        print(output)
         return 0
 
     if args.command == "dump-cli":

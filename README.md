@@ -55,6 +55,18 @@ mydron info --port COM5
 mydron status --port COM5
 ```
 
+- ejecutar health check rapido especifico de SpeedyBee F405 V4
+
+```powershell
+mydron quick-health --port COM5 --board speedybee-f405-v4
+```
+
+El informe se guarda por defecto en:
+
+```text
+D:\MyDron\boards\speedybee-f405-v4\reports
+```
+
 - crear un backup completo de la configuracion por CLI textual INAV
 
 ```powershell
@@ -97,3 +109,17 @@ skills\codex-mydron-inav
 Esa skill contiene los flujos de trabajo seguros para detectar el puerto USB,
 hacer backups dentro de `D:\MyDron`, usar `mydron cli`, planificar cambios de
 configuracion y diagnosticar motores/servos con barreras de seguridad.
+
+## Carpetas por placa
+
+Los archivos especificos de la SpeedyBee F405 V4 estan en:
+
+```text
+boards\speedybee-f405-v4
+```
+
+Los artefactos de ejecucion para esa placa deben guardarse bajo:
+
+```text
+D:\MyDron\boards\speedybee-f405-v4
+```

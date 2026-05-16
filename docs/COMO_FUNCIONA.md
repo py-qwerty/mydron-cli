@@ -48,6 +48,7 @@ Define los comandos que ve el usuario:
 - `mydron status --port COM5`
 - `mydron dump-cli --port COM5 --out backups\dump.txt`
 - `mydron cli --port COM5 status`
+- `mydron quick-health --port COM5 --board speedybee-f405-v4`
 
 Usa `argparse`, que es la libreria estandar de Python para construir CLIs.
 
@@ -212,3 +213,40 @@ mydron cli --port COM5 --allow-unsafe "set nombre = valor"
 ```
 
 La referencia de riesgos esta en `docs/INAV_CLI_COMMANDS.md`.
+
+## Health check especifico de placa
+
+El comando `quick-health` usa un perfil de placa versionado en:
+
+```text
+boards\speedybee-f405-v4\health-profile.json
+```
+
+Para la SpeedyBee F405 V4 comprueba:
+
+```text
++-------------+--------------------------------+
+| Check       | Esperado                       |
++-------------+--------------------------------+
+| Board ID    | SB44                           |
+| Target      | SPEEDYBEEF405V4                |
+| GYRO        | OK, ICM42605                   |
+| ACC         | OK, ICM42605                   |
+| BARO        | OK, SPL06                      |
+| I2C errors  | 0                              |
+| OSD         | MAX7456                        |
+| SD          | Warning si Startup failed      |
++-------------+--------------------------------+
+```
+
+Uso:
+
+```powershell
+mydron quick-health --port COM5 --board speedybee-f405-v4
+```
+
+El informe operativo se escribe en:
+
+```text
+D:\MyDron\boards\speedybee-f405-v4\reports
+```

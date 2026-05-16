@@ -1,0 +1,52 @@
+{
+  "board": "speedybee-f405-v4",
+  "expected_target": "SPEEDYBEEF405V4",
+  "expected_board_id": "SB44",
+  "native_sensors": {
+    "GYRO": {
+      "required": true,
+      "expected_state": "OK",
+      "expected_hardware": "ICM42605"
+    },
+    "ACC": {
+      "required": true,
+      "expected_state": "OK",
+      "expected_hardware": "ICM42605"
+    },
+    "BARO": {
+      "required": true,
+      "expected_state": "OK",
+      "expected_hardware": "SPL06"
+    },
+    "MAG": {
+      "required": false,
+      "expected_state": "NONE"
+    },
+    "GPS": {
+      "required": false,
+      "expected_state": "NONE"
+    },
+    "RANGEFINDER": {
+      "required": false,
+      "expected_state": "NONE"
+    },
+    "OPFLOW": {
+      "required": false,
+      "expected_state": "NONE"
+    }
+  },
+  "peripherals": {
+    "OSD": {
+      "required": true,
+      "expected_contains": "MAX7456"
+    },
+    "SD": {
+      "required": false,
+      "warn_on": "Startup failed"
+    }
+  },
+  "limits": {
+    "max_i2c_errors": 0,
+    "max_system_load_percent": 80
+  }
+}

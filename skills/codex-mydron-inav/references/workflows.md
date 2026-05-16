@@ -35,6 +35,23 @@ mydron cli --port COM5 diff all
 
 Summarize sensors, arming flags, receiver/GPS presence, SD/OSD/VTX state, and configuration drift.
 
+## Quick health for SpeedyBee F405 V4
+
+Use the board-specific profile and store reports in the board folder:
+
+```powershell
+mydron quick-health --port COM5 --board speedybee-f405-v4
+```
+
+Expected output folder:
+
+```text
+D:\MyDron\boards\speedybee-f405-v4\reports
+```
+
+This is read-only and checks board ID, target, native sensors, I2C errors, OSD,
+SD, and ADC channel visibility.
+
 ## Backup
 
 Use:
