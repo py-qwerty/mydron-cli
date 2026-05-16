@@ -1,0 +1,4 @@
+interface:
+  display_name: "Codex MyDron INAV"
+  short_description: "Operate MyDron INAV safely from CLI"
+  default_prompt: "Use $codex-mydron-inav to diagnose and configure my INAV drone safely with mydron CLI."

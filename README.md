@@ -91,6 +91,7 @@ El repo incluye la skill reutilizable en:
 
 ```text
 skills\mydron-inav
+skills\codex-mydron-inav
 ```
 
 Esa skill contiene los flujos de trabajo seguros para detectar el puerto USB,
